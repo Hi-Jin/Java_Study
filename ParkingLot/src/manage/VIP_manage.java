@@ -13,8 +13,11 @@ public class VIP_manage {
 	private static int user_num;
 	
 	public static int vip_discount(String car_num) {
-		int visit_num = find(car_num);
-		System.out.println(visit_num + "번 방문으로 할인되었습니다.");
+		read();
+		int visit_num = user_visit_num[find(car_num)];
+		if (visit_num >= 3) {
+			System.out.println(visit_num + "번 방문으로 할인되었습니다.");
+		}
 		return (visit_num / 3) + 1;
 	}
 	

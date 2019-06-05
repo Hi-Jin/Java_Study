@@ -1,13 +1,16 @@
 package car_type;
 
+import manage.VIP_manage;
+
 public class SmallSized_Car extends Car{
 	
 	public String getParkingFee(long time) {
-		if (time*0.14 < 250)
+		/*
+		if (time*0.14 < 25)
 			return "0";
-		
 		else
-			return String.format("%.0f", time*0.14);
+		*/
+			return String.format("%.0f", time*0.14 / VIP_manage.vip_discount(this.getCar_num()));
 	}
 
 }
