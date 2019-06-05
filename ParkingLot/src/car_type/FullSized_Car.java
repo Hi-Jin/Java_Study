@@ -1,5 +1,7 @@
 package car_type;
 
+import manage.VIP_manage;
+
 public class FullSized_Car extends Car {
 	
 	public String getParkingFee(long time) {
@@ -7,6 +9,6 @@ public class FullSized_Car extends Car {
 			return "0";
 		
 		else
-			return String.format("%.0f", time*0.42);
+			return String.format("%.0f", time*0.42 / VIP_manage.vip_discount(this.getCar_num()));
 	}
 }

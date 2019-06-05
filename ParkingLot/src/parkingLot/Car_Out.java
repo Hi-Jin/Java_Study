@@ -4,6 +4,7 @@ import user_interface.Error;
 import user_interface.User_Input;
 import car_type.*;
 import manage.Program_Manage;
+import manage.VIP_manage;
 
 public class Car_Out {
 	public static void setOut_time(Car space, long out_time) {
@@ -34,6 +35,7 @@ public class Car_Out {
 				setParking_time(cars[loOfCar], cars[loOfCar].getOut_time() - cars[loOfCar].getIn_time());
 				cars[loOfCar].setLocation("");
 				printTimeAndFee(cars[loOfCar]);
+				VIP_manage.write(cars[loOfCar].getCar_num());
 				break;
 				
 			} else {
