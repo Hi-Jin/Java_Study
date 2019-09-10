@@ -15,4 +15,14 @@ public class Utility {
 		boolean valueCompare = p2.getValue().equals(p2.getValue());
 		return keyCompare && valueCompare;
 	}
+	
+	public static <T extends Comparable<T>> T getMax(T[] array) {
+		if (array == null || array.length == 0)
+			return null;
+		T largest = array[0];
+		for (int i = 0; i < array.length; i++)
+			if (largest.compareTo(array[i]) < 0)
+				largest = array[i];
+		return largest;
+	}
 }
