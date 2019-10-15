@@ -1,7 +1,5 @@
 package sorting;
 
-import java.util.Arrays;
-
 public class SelectionSort {
 
 	public static int[] selectionSort(int[] arr) {
@@ -14,8 +12,6 @@ public class SelectionSort {
 			}
 			MyArray.swap(arr, i, max);
 		}
-		
-		System.out.println("Sorted Arr = " + Arrays.toString(arr));
 		
 		return arr;
 	}

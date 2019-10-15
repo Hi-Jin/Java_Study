@@ -1,13 +1,13 @@
 package sorting;
 
-import java.util.Arrays;
-
 public class RadixSort {
 
 	private static int[][] 	bucket;
 	private static int[]	arraySize;
+	/*
 	private static int[] 	positive;
 	private static int[]	negative;
+	*/
 	
 	private static void addToBucket(int input, int digit) {
 		digit = (input%(digit*10))/digit;
@@ -16,6 +16,11 @@ public class RadixSort {
 		// System.out.println(arraySize[digit]);
 	}
 	
+	/* 음수인 경우를 처리하는 부분
+	 * 사용 방법 : 아래에 주석처리 되지 않은 radixSort()를 sort()로 변경하고 사용해야 한다.
+	 * 			필드 중 positive, negative를 주석 해제하고 사용해야 한다.
+	 */
+	/*
 	private static void signClassification(int[] input) {
 		int[] tempPositive = new int[input.length];
 		int[] tempNegative = new int[input.length];
@@ -56,16 +61,16 @@ public class RadixSort {
 			result[negative.length + i] = positive[i];
 		}
 		
-		System.out.println("Sorted Arr = " + Arrays.toString(result));
-		
 		return result;
 	}
+	*/
 	
-	private static int[] sort(int[] input) {
+	public static int[] radixSort(int[] input) {
 		bucket = new int[10][input.length];
 		int max = 0;
 		
-		//get max
+		// get max
+		// 자리수 구하는 건데, 로그로 구해도 됨
 		for(int i = 0; i < input.length; i++) {
 			max = (input[i] > max) ? input[i] : max;
 		}

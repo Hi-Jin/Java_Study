@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 public class CompareSortings {
-
+	
 	public static void main(String[] args) {
 		Scanner			input = new Scanner(System.in); // scanner
 		int[] 			arr; // 난수 배열 원본
@@ -20,8 +20,8 @@ public class CompareSortings {
 						aTime = 0.0;
 		
 		System.out.println("난수의 범위를 입력하세요.");
-		System.out.print("최소 : ");
-		minRange = input.nextInt();
+		System.out.print("최소 : 0\n");
+		minRange = 0;
 		System.out.print("최대 : ");
 		maxRange = input.nextInt();
 		
@@ -30,8 +30,7 @@ public class CompareSortings {
 		arr = makeRandArr(num, minRange, maxRange);
 		copiedArr = new int[arr.length];
 		
-		System.out.print("\n실험 횟수를 입력하세요 : ");
-		trialNum = input.nextInt();
+		trialNum = 1;
 		
 		for(int count = 0; count < trialNum; count++) {
 			System.arraycopy(arr, 0, copiedArr, 0, arr.length);
@@ -109,6 +108,146 @@ public class CompareSortings {
 		if(aTime == timeArr[4])
 			System.out.print("Arrays.Sort 순으로 빠릅니다.");
 		
+		System.out.println("\n\n\nsorting sorted arr // sorting reverse arr\n");
+		System.out.println("sorting sorted arr-");
+
+		System.arraycopy(arr, 0, copiedArr, 0, arr.length);
+		Arrays.sort(copiedArr);
+		start = System.nanoTime();
+		BubbleSort.bubbleSort(copiedArr);
+		end = System.nanoTime();
+		bTime = (end - start) / 1000000000.0;
+		
+		System.arraycopy(arr, 0, copiedArr, 0, arr.length);
+		Arrays.sort(copiedArr);
+		start = System.nanoTime();
+		SelectionSort.selectionSort(copiedArr);
+		end = System.nanoTime();
+		sTime = (end - start) / 1000000000.0;
+		
+		System.arraycopy(arr, 0, copiedArr, 0, arr.length);
+		Arrays.sort(copiedArr);
+		start = System.nanoTime();
+		InsertionSort.insertionSort(copiedArr);
+		end = System.nanoTime();
+		iTime = (end - start) / 1000000000.0;
+		
+		System.arraycopy(arr, 0, copiedArr, 0, arr.length);
+		Arrays.sort(copiedArr);
+		start = System.nanoTime();
+		RadixSort.radixSort(copiedArr);
+		end = System.nanoTime();
+		rTime = (end - start) / 1000000000.0;
+		
+		System.arraycopy(arr, 0, copiedArr, 0, arr.length);
+		Arrays.sort(copiedArr);
+		start = System.nanoTime();
+		Arrays.sort(copiedArr);
+		end = System.nanoTime();
+		aTime = (end - start) / 1000000000.0;
+		
+		System.out.println("bubble sort : " + bTime + "초");
+		System.out.println("selection sort : " + sTime + "초");
+		System.out.println("insertion sort : " + iTime + "초");
+		System.out.println("radix sort : " + rTime + "초");
+		System.out.println("Arrays.sort : " + aTime + "초");
+		
+		double[] timeArr2 = {bTime, sTime, iTime, rTime, aTime};
+		
+		Arrays.sort(timeArr2);
+		
+		for(int i = 0; i < 4; i++) {
+			if(bTime == timeArr2[i])
+				System.out.print("bubbleSort, ");
+			if(sTime == timeArr2[i])
+				System.out.print("selectionSort, ");
+			if(iTime == timeArr2[i])
+				System.out.print("insertionSort, ");
+			if(rTime == timeArr2[i])
+				System.out.print("radixSort, ");
+			if(aTime == timeArr2[i])
+				System.out.print("Arrays.Sort, ");
+		}
+		if(bTime == timeArr2[4])
+			System.out.print("bubbleSort 순으로 빠릅니다.");
+		if(sTime == timeArr2[4])
+			System.out.print("selectionSort 순으로 빠릅니다.");
+		if(iTime == timeArr2[4])
+			System.out.print("insertionSort 순으로 빠릅니다.");
+		if(rTime == timeArr2[4])
+			System.out.print("radixSort 순으로 빠릅니다.");
+		if(aTime == timeArr2[4])
+			System.out.print("Arrays.Sort 순으로 빠릅니다.");
+		
+		
+		for(int i = 0; i < num; i++) {
+			arr[i] = num - i - 1;
+		}
+
+		System.out.println("\n\nsorting reverse arr-");
+		System.arraycopy(arr, 0, copiedArr, 0, arr.length);
+		start = System.nanoTime();
+		BubbleSort.bubbleSort(copiedArr);
+		end = System.nanoTime();
+		bTime = (end - start) / 1000000000.0;
+		
+		System.arraycopy(arr, 0, copiedArr, 0, arr.length);
+		start = System.nanoTime();
+		SelectionSort.selectionSort(copiedArr);
+		end = System.nanoTime();
+		sTime = (end - start) / 1000000000.0;
+		
+		System.arraycopy(arr, 0, copiedArr, 0, arr.length);
+		start = System.nanoTime();
+		InsertionSort.insertionSort(copiedArr);
+		end = System.nanoTime();
+		iTime = (end - start) / 1000000000.0;
+		
+		System.arraycopy(arr, 0, copiedArr, 0, arr.length);
+		start = System.nanoTime();
+		RadixSort.radixSort(copiedArr);
+		end = System.nanoTime();
+		rTime = (end - start) / 1000000000.0;
+		
+		System.arraycopy(arr, 0, copiedArr, 0, arr.length);
+		start = System.nanoTime();
+		Arrays.sort(copiedArr);
+		end = System.nanoTime();
+		aTime = (end - start) / 1000000000.0;
+		
+		System.out.println("bubble sort : " + bTime + "초");
+		System.out.println("selection sort : " + sTime + "초");
+		System.out.println("insertion sort : " + iTime + "초");
+		System.out.println("radix sort : " + rTime + "초");
+		System.out.println("Arrays.sort : " + aTime + "초");
+		
+		double[] timeArr3 = {bTime, sTime, iTime, rTime, aTime};
+		
+		Arrays.sort(timeArr3);
+		
+		for(int i = 0; i < 4; i++) {
+			if(bTime == timeArr3[i])
+				System.out.print("bubbleSort, ");
+			if(sTime == timeArr3[i])
+				System.out.print("selectionSort, ");
+			if(iTime == timeArr3[i])
+				System.out.print("insertionSort, ");
+			if(rTime == timeArr3[i])
+				System.out.print("radixSort, ");
+			if(aTime == timeArr3[i])
+				System.out.print("Arrays.Sort, ");
+		}
+		if(bTime == timeArr3[4])
+			System.out.print("bubbleSort 순으로 빠릅니다.");
+		if(sTime == timeArr3[4])
+			System.out.print("selectionSort 순으로 빠릅니다.");
+		if(iTime == timeArr3[4])
+			System.out.print("insertionSort 순으로 빠릅니다.");
+		if(rTime == timeArr3[4])
+			System.out.print("radixSort 순으로 빠릅니다.");
+		if(aTime == timeArr3[4])
+			System.out.print("Arrays.Sort 순으로 빠릅니다.");
+		
 		input.close();
 	}
 	
@@ -119,7 +258,7 @@ public class CompareSortings {
 			result[i] = (int) (Math.random()*(high - low + 1) + low);
 		}
 		
-		System.out.println("Random Arr = " + Arrays.toString(result));
+		// System.out.println("Random Arr = " + Arrays.toString(result));
 		
 		return result;
 	}

@@ -1,7 +1,5 @@
 package sorting;
 
-import java.util.Arrays;
-
 public class BubbleSort {
 
 	public static int[] bubbleSort(int[] arr) {
@@ -12,7 +10,6 @@ public class BubbleSort {
 				}
 			}
 		}
-		System.out.println("Sorted Arr = " + Arrays.toString(arr));
 		
 		return arr;
 	}
