@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lab09.surveyGUI.SurveyController">
+   <children>
+      <Label layoutX="253.0" layoutY="6.0" text="간단한 설문조사" />
+      <HBox layoutX="14.0" layoutY="47.0" prefHeight="27.0" prefWidth="234.0">
+         <children>
+            <Label maxWidth="1.7976931348623157E308" text="이름" HBox.hgrow="ALWAYS" />
+            <TextField fx:id="name" />
+         </children>
+      </HBox>
+      <HBox layoutX="14.0" layoutY="82.0" prefHeight="27.0" prefWidth="234.0">
+         <children>
+            <Label maxWidth="1.7976931348623157E308" text="거주지역" HBox.hgrow="ALWAYS" />
+            <ComboBox fx:id="residence" prefWidth="161.0" />
+         </children>
+      </HBox>
+      <HBox layoutX="300.0" layoutY="52.0" prefHeight="18.0" prefWidth="257.0">
+         <children>
+            <Label maxWidth="1.7976931348623157E308" text="성별" HBox.hgrow="ALWAYS" />
+            <RadioButton maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="남자" userData="남자" HBox.hgrow="ALWAYS">
+               <toggleGroup>
+                  <ToggleGroup fx:id="gender" />
+               </toggleGroup>
+            </RadioButton>
+            <RadioButton maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="여자" toggleGroup="$gender" userData="여자" HBox.hgrow="ALWAYS" />
+         </children>
+      </HBox>
+      <Label layoutX="14.0" layoutY="129.0" text="1. 좋아하는 계절은?" />
+      <HBox layoutX="15.0" layoutY="152.0" prefHeight="18.0" prefWidth="467.0">
+         <children>
+            <CheckBox fx:id="pref_spring" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="봄" HBox.hgrow="ALWAYS" />
+            <CheckBox fx:id="pref_summer" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="여름" HBox.hgrow="ALWAYS" />
+            <CheckBox fx:id="pref_fall" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="가을" HBox.hgrow="ALWAYS" />
+            <CheckBox fx:id="pref_winter" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="겨울" HBox.hgrow="ALWAYS" />
+         </children>
+      </HBox>
+      <Label layoutX="14.0" layoutY="183.0" text="2. 우리나라에서 가을에 가장 놀러가고 싶은 지역을 선택하세요." />
+      <HBox layoutX="15.0" layoutY="206.0" prefHeight="18.0" prefWidth="583.0">
+         <children>
+            <RadioButton maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="수도권" userData="수도권" HBox.hgrow="ALWAYS">
+               <toggleGroup>
+                  <ToggleGroup fx:id="fall_area" />
+               </toggleGroup></RadioButton>
+            <RadioButton maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="강원도" toggleGroup="$fall_area" userData="강원도" HBox.hgrow="ALWAYS" />
+            <RadioButton maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="충청도" toggleGroup="$fall_area" userData="충청도" HBox.hgrow="ALWAYS" />
+            <RadioButton maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="전라도" toggleGroup="$fall_area" userData="전라도" HBox.hgrow="ALWAYS" />
+            <RadioButton maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="경상도" toggleGroup="$fall_area" userData="경상도" HBox.hgrow="ALWAYS" />
+            <RadioButton maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="제주도" toggleGroup="$fall_area" userData="제주도" HBox.hgrow="ALWAYS" />
+         </children>
+      </HBox>
+      <Button layoutX="270.0" layoutY="230.0" mnemonicParsing="false" onAction="#printResult" text="결과 출력" />
+      <TextArea fx:id="resultField" layoutX="9.0" layoutY="261.0" prefHeight="131.0" prefWidth="583.0" />
+   </children>
+</AnchorPane>

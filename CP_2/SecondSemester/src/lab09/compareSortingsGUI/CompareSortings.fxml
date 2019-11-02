@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="650.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lab09.compareSortingsGUI.CompareController">
+   <children>
+      <Label layoutX="195.0" layoutY="36.0" text="과제7-2. JavaFX를 이용한 정렬 알고리즘 비교" />
+      <VBox layoutX="91.0" layoutY="74.0" prefHeight="115.0" prefWidth="303.0">
+         <children>
+            <HBox>
+               <children>
+                  <Label maxWidth="1.7976931348623157E308" text="생성할 랜덤 정수의 수" HBox.hgrow="ALWAYS" />
+                  <TextField fx:id="numberOfRand" maxWidth="1.7976931348623157E308" prefWidth="150.0" />
+               </children>
+               <VBox.margin>
+                  <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox>
+               <children>
+                  <Label maxWidth="1.7976931348623157E308" prefHeight="17.0" prefWidth="126.0" text="하한값" HBox.hgrow="ALWAYS" />
+                  <TextField fx:id="min" maxWidth="1.7976931348623157E308" prefWidth="150.0" />
+               </children>
+               <VBox.margin>
+                  <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox>
+               <children>
+                  <Label maxWidth="1.7976931348623157E308" text="상한값" HBox.hgrow="ALWAYS" />
+                  <TextField fx:id="max" maxWidth="1.7976931348623157E308" prefWidth="150.0" />
+               </children>
+               <VBox.margin>
+                  <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+               </VBox.margin>
+            </HBox>
+         </children>
+      </VBox>
+      <Button layoutX="482.0" layoutY="125.0" mnemonicParsing="false" onAction="#submit" text="확인" />
+      <HBox layoutX="15.0" layoutY="225.0" prefHeight="199.0" prefWidth="621.0">
+         <children>
+            <VBox>
+               <children>
+                  <Label alignment="CENTER" maxWidth="1.7976931348623157E308" text="랜덤 정렬" />
+                  <TextArea fx:id="randTextField" />
+               </children>
+               <HBox.margin>
+                  <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+               </HBox.margin>
+            </VBox>
+            <VBox>
+               <children>
+                  <Label alignment="CENTER" maxWidth="1.7976931348623157E308" text="정렬이 되어 있는 경우" />
+                  <TextArea fx:id="sortedTextField" />
+               </children>
+               <HBox.margin>
+                  <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+               </HBox.margin>
+            </VBox>
+            <VBox>
+               <children>
+                  <Label alignment="CENTER" maxWidth="1.7976931348623157E308" text="역순으로 정렬이 되어 있는 경우" />
+                  <TextArea fx:id="reverseTextField" />
+               </children>
+               <HBox.margin>
+                  <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+               </HBox.margin>
+            </VBox>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>

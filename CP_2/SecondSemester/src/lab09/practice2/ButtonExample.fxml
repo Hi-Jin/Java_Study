@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lab09.practice2.ButtonExampleController">
+   <children>
+      <Label layoutX="274.0" layoutY="30.0" text="퀴즈문제" />
+      <Label layoutX="14.0" layoutY="58.0" text="1. 다음 중 JavaFX에서 Container에 해당하는 것을 모두 고르시오." />
+      <HBox layoutX="14.0" layoutY="100.0" prefHeight="18.0" prefWidth="469.0">
+         <children>
+            <CheckBox fx:id="choice1_1" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="AnchorPane" HBox.hgrow="ALWAYS" />
+            <CheckBox fx:id="choice1_2" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="ComboBox" HBox.hgrow="ALWAYS" />
+            <CheckBox fx:id="choice1_3" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="CheckBox" HBox.hgrow="ALWAYS" />
+            <CheckBox fx:id="choice1_4" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="HBox" HBox.hgrow="ALWAYS" />
+            <CheckBox fx:id="choice1_5" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="ListView" HBox.hgrow="ALWAYS" />
+         </children>
+      </HBox>
+      <Label layoutX="14.0" layoutY="148.0" text="2. 모든 경우에 최적의 알고리즘은 존재하는가?" />
+      <HBox layoutX="12.0" layoutY="182.0" prefHeight="18.0" prefWidth="181.0">
+         <children>
+            <RadioButton maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="그렇다" userData="1" HBox.hgrow="ALWAYS">
+               <toggleGroup>
+                  <ToggleGroup fx:id="choice2" />
+               </toggleGroup>
+            </RadioButton>
+            <RadioButton maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="아니다" toggleGroup="$choice2" userData="2" HBox.hgrow="ALWAYS" />
+         </children>
+      </HBox>
+      <Button layoutX="249.0" layoutY="208.0" mnemonicParsing="false" onAction="#checkResult" text="퀴즈 정답 확인" />
+      <Label fx:id="resultLabel" layoutX="12.0" layoutY="256.0" prefHeight="135.0" prefWidth="577.0" />
+   </children>
+</AnchorPane>
