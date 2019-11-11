@@ -3,6 +3,7 @@ package lab10.moveItem;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -28,6 +29,7 @@ public class MoveItemController implements Initializable {
 			return;
 		}
 		rightItem.add(leftItem.remove(selectedIndex));
+		leftList.getSelectionModel().clearSelection();
 	}
 	
 	@FXML public void moveLeft() {
@@ -37,6 +39,7 @@ public class MoveItemController implements Initializable {
 			return;
 		}
 		leftItem.add(rightItem.remove(selectedIndex));
+		rightList.getSelectionModel().clearSelection();
 	}
 	
 	@FXML public void moveRightAll() {
@@ -64,6 +67,12 @@ public class MoveItemController implements Initializable {
 		
 		leftList.setItems(leftItem);
 		rightList.setItems(rightItem);
+		
+		Platform.runLater(new Runnable() {
+			@Override
+			public void run() {
+				addField.requestFocus();
+			}
+		});
 	}
-
 }
