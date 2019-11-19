@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lab11.stopWatch.StopWatchController">
+   <children>
+      <Label styleClass="roundedLabel" fx:id="timeLabel" alignment="CENTER" layoutX="32.0" layoutY="27.0" prefHeight="43.0" prefWidth="236.0" text="00:00:00.000" textAlignment="JUSTIFY">
+         <font>
+            <Font size="18.0" />
+         </font>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+      </Label>
+      <Button styleClass="roundedButton" fx:id="startBtn" layoutX="32.0" layoutY="84.0" mnemonicParsing="false" onAction="#start" prefHeight="27.0" prefWidth="89.0" text="시작" />
+      <Button styleClass="roundedButton" fx:id="clearBtn" layoutX="179.0" layoutY="84.0" mnemonicParsing="false" onAction="#clear" prefHeight="27.0" prefWidth="89.0" text="랩타임" />
+      <Label fx:id="lapTimeLabel" layoutX="150.0" layoutY="126.0" text="00:00:00.000" />
+      <TableView fx:id="timeTable" layoutX="6.0" layoutY="154.0" prefHeight="232.0" prefWidth="288.0">
+        <columns>
+          <TableColumn fx:id="noColumn" prefWidth="40.0" text="#" />
+          <TableColumn fx:id="lapTimeColumn" prefWidth="107.0" text="Lap Time" />
+            <TableColumn fx:id="totalColumn" prefWidth="107.0" text="Total" />
+        </columns>
+      </TableView>
+      <Label layoutX="99.0" layoutY="126.0" text="현재 랩:" />
+   </children>
+</AnchorPane>

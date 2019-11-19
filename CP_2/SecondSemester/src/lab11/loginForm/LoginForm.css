@@ -1,0 +1,28 @@
+.root {
+	-fx-background-color: #ffffff;
+	-fx-background-size: 300 200;
+}
+Label {
+	-fx-font-size: 12pt;
+	-fx-font-weight: bold;
+	-fx-text-fill: #333333;
+}
+#welcomeLabel {
+	-fx-font-size: 35px;
+	-fx-font-family: "Arial Black";
+	-fx-text-fill: linear-gradient(darkgray, lightgray);
+	-fx-effect: innershadow(three-pass-box, rgba(0, 0, 0, 0.7), 3, 0, 2, 2.1);
+}
+.button {
+	-fx-text-fill: white;
+	-fx-font-family: "Arial Narrow";
+	-fx-font-weight: bold;
+	-fx-background-color: linear-gradient(#61A2BA, #2A5058);
+	-fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.6), 10, 0, 2, 2);
+}
+.button:hover {
+	-fx-background-color: linear-gradient(#2A5058, #61B2B1);
+}
+.button:pressed {
+	-fx-background-color: linear-gradient(yellow, #61A2B1);
+}

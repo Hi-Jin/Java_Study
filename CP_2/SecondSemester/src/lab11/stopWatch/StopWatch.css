@@ -1,0 +1,22 @@
+.root {
+	-fx-background-color: linear-gradient(to bottom, lightblue, white, lightblue);
+}
+
+Button, TableView {
+   -fx-border-color: black;
+   -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.6), 10, 0, 2, 2);
+}
+
+Label {
+	-fx-font-family: "Arial Black";
+	-fx-effect: innershadow(three-pass-box, rgba(0, 0, 0, 0.7), 3, 0, 2, 2.1);
+}
+
+.roundedLabel {
+	-fx-border-color: lightgray;
+	-fx-border-radius: 10px;
+}
+
+.roundedButton {
+	-fx-border-radius: 5%;
+}
