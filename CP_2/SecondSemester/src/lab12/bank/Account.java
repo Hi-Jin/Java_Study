@@ -1,6 +1,8 @@
 package lab12.bank;
 
-abstract class Account {
+import java.io.Serializable;
+
+public abstract class Account implements Serializable {
 	public abstract String getAcctType();
 	public Account(double init_balance) {
 		Balance = init_balance;
@@ -15,7 +17,7 @@ abstract class Account {
 		return true;
 	}
 	
-	public boolean withdraw(double amt) {		
+	public boolean withdraw(double amt) {
 		Balance = Balance - amt;
 		return true;
 	}

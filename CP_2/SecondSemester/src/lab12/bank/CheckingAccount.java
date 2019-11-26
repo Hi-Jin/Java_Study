@@ -1,6 +1,6 @@
 package lab12.bank;
 
-class CheckingAccount extends Account {
+public class CheckingAccount extends Account {
 	private SavingsAccount s_account;
 
 	private boolean savingflag;

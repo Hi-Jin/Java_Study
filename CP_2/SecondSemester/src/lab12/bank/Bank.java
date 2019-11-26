@@ -1,6 +1,8 @@
 package lab12.bank;
 
-public class Bank {
+import java.io.Serializable;
+
+public class Bank implements Serializable {
 	Customer[] customer;
 	private int numOfCustomer;
 	// private Lock bankLock;

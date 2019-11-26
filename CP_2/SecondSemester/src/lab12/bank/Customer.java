@@ -1,6 +1,8 @@
 package lab12.bank;
 
-public class Customer {
+import java.io.Serializable;
+
+public class Customer implements Serializable {
 	Account[] account;
 
 	public Customer(String name) {

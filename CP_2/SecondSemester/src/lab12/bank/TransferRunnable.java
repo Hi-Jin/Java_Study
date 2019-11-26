@@ -17,7 +17,6 @@ public class TransferRunnable implements Runnable {
 	public void run() {
 		int toAccount;
 		double amount;
-//		to-do
 		int delay;
 		
 		while(true) {
